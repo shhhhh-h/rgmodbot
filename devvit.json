@@ -1,14 +1,50 @@
 {
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
   "name": "rgmodbot",
   "version": "0.0.1",
   "description": "A simple automoderator supplement bot for r/royalsgossip",
   "type": "app",
-  "permissions": [
-    "posts",
-    "comments",
-    "wiki",
-    "flair",
-    "moderation"
-  ],
-  "settings": {}
-}
+  "post": {
+    "dir": "public",
+    "entrypoints": {
+      "default": { "entry": "index.html", "height": "regular" }
+    }
+  },
+  "server": {
+    "entry": "src/server/index.js"
+  },
+
+  "permissions": {
+    "reddit": {
+      "enable": true,
+      "asUser": [
+        "SUBMIT_POST",
+        "SUBMIT_COMMENT"
+      ]
+    },
+    "redis": true,
+    "http": false,
+    "media": false,
+    "realtime": false
+  },
+
+  "settings": {
+    "global": {
+      "apiKey": {
+        "type": "string",
+        "label": "API Key",
+        "isSecret": true,
+        "defaultValue": ""
+      }
+    },
+    "subreddit": {
+      "welcomeMessage": {
+        "type": "string",
+        "label": "Welcome Message",
+        "defaultValue": "Welcome!"
+      }
+    }
+  },
+
+    "dev": { "subreddit": "your-playtest-subreddit" }
+  }
