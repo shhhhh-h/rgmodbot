@@ -1,0 +1,14 @@
+{
+  "name": "rgmodbot",
+  "version": "0.0.1",
+  "description": "A simple automoderator supplement bot for r/royalsgossip",
+  "type": "app",
+  "permissions": [
+    "posts",
+    "comments",
+    "wiki",
+    "flair",
+    "moderation"
+  ],
+  "settings": {}
+}
