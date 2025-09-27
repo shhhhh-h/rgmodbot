@@ -4,30 +4,16 @@
   "version": "0.0.1",
   "description": "A simple automoderator supplement bot for r/royalsgossip",
   "type": "app",
-  "post": {
-    "dir": "public",
-    "entrypoints": {
-      "default": { "entry": "index.html", "height": "regular" }
-    }
-  },
-  "server": {
-    "entry": "src/server/index.js"
-  },
-
+  "server": { "entry": "src/main.ts" },
   "permissions": {
     "reddit": {
       "enable": true,
-      "asUser": [
-        "SUBMIT_POST",
-        "SUBMIT_COMMENT"
-      ]
+      "asUser": ["SUBMIT_POST", "SUBMIT_COMMENT"]
     },
     "redis": true,
-    "http": false,
     "media": false,
     "realtime": false
   },
-
   "settings": {
     "global": {
       "apiKey": {
@@ -45,6 +31,5 @@
       }
     }
   },
-
-    "dev": { "subreddit": "your-playtest-subreddit" }
-  }
+  "dev": { "subreddit": "rgmodbot_dev" }
+}
